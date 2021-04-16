@@ -27,7 +27,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	http.HandleFunc("/hello-golang", hello)
 	fmt.Println("Golang Microservice started at port 9001")
-	log.Fatal(http.ListenAndServe(":9002", nil))
+	log.Fatal(http.ListenAndServe(":9001", nil))
 }
 
 func main() {
