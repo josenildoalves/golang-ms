@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: enomoto-workshop
+spec:
+  rules:
+  - host: enomoto-workshop
+  - http:
+      paths:
+      - path: /hello-springboot
+        backend:
+          serviceName: spring-boot-ms
+          servicePort: 80
+      - path: /hello-python
+        backend:
+          serviceName: python-ms
+          servicePort: 80
+      - path: /hello-golang
+        backend:
+          serviceName: golang-ms
+          servicePort: 80          
