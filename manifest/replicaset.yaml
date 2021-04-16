@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: golang-ms
+  labels:
+    app: golang-ms
+spec:
+  selector:
+    matchLabels:
+      app: golang-ms
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: golang-ms
+    spec:
+      containers:
+        - name: golang-ms
+          image: enomoto/golang-ms:latest
+      

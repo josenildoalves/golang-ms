@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-ms
+spec:
+  selector:
+    matchLabels:
+      app: golang-ms
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: golang-ms
+    spec:
+      containers:
+        - name: golang-ms
+          image: "enomoto/golang-ms:latest"
+          ports:
+          - containerPort: 9001
+          resources:
+            limits:
+              cpu: "1"
+              memory: "200Mi"
+            requests:
+              cpu: "0.5"
+              memory: "100Mi"
