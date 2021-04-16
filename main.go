@@ -13,15 +13,15 @@ var counter int
 func helloWorld(w http.ResponseWriter, r *http.Request) {
 	currentTime := time.Now()
 
-	name, err := os.Hostname()
+	hostName, err := os.Hostname()
 
 	if err != nil {
 		panic(err)
 	}
 
 	counter++
-	fmt.Fprintf(w, "Hello World Golang: "+name+" -> "+fmt.Sprint(counter))
-	fmt.Println(currentTime.Format("01-02-2006 15:04:05") + " - Hello Golang: " + name + " -> " + fmt.Sprint(counter))
+	fmt.Fprintf(w, "Hello World Golang: "+hostName+" -> "+fmt.Sprint(counter))
+	fmt.Println(currentTime.Format("01-02-2006 15:04:05") + " - Hello Golang: " + hostName + " -> " + fmt.Sprint(counter))
 }
 
 func handleRequests() {
